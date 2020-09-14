@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "624043788935",
+    "firebase_url": "https://health-checkup-70b2c.firebaseio.com",
+    "project_id": "health-checkup-70b2c",
+    "storage_bucket": "health-checkup-70b2c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:624043788935:android:074bf798d0ff1b778c0622",
+        "android_client_info": {
+          "package_name": "com.example.flutter_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "624043788935-hlboaq73vg0vh9c7ssv4ppovtco3ksi8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.flutter_app",
+            "certificate_hash": "dab05e914256af14b07e3d6bdd11ded8028f39c7"
+          }
+        },
+        {
+          "client_id": "624043788935-3rj0k3aq43mhcji48am92kr5r0r3g85i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQRP8SozHapAAGfNYz2vE9pDarGK2v90w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "624043788935-3rj0k3aq43mhcji48am92kr5r0r3g85i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
