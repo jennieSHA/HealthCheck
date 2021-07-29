@@ -117,7 +117,7 @@ class _CreateProfileState extends State<CreateProfile> {
                   Map <String,dynamic> data = {"Name":Name.text,"Gender":Gender.text,
                     "Bloodgroup":Bloodgroup.text,"EmailID":EmailID.text,"DateofBirth":DateofBirth.text,
                     "Maritalstatus":Maritalstatus.text,"Height":Height.text,"Weight":Weight.text,
-                    'UploadedReport':[],'LabReports':[]};
+                   };
                   final DocumentReference docref =  FirebaseFirestore.instance.collection("User").doc(widget.docID);
                   docref.set(data, SetOptions(merge: true));
 
