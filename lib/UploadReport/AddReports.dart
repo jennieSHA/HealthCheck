@@ -10,6 +10,8 @@ import 'package:path/path.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 
 class AddReport extends StatefulWidget {
+  String docID;
+  AddReport({this.docID});
   @override
   _AddReportState createState() => _AddReportState();
 }
@@ -120,7 +122,7 @@ class _AddReportState extends State<AddReport> {
                           };
                           FirebaseFirestore.instance
                               .collection('User')
-                              .doc('jinishagehlot193')
+                              .doc(widget.docID)
                               .update({
                             'UploadedReport': FieldValue.arrayUnion([values])
                           });
@@ -192,7 +194,7 @@ class _AddReportState extends State<AddReport> {
       body: StreamBuilder(
           stream: FirebaseFirestore.instance
               .collection('User')
-              .doc('jinishagehlot193')
+              .doc(widget.docID)
               .snapshots(),
           builder: (context, snapshot) {
             List<String> images = [];
@@ -204,13 +206,9 @@ class _AddReportState extends State<AddReport> {
                 name.add(dat['reportName']);
                 date.add(dat['date']);
               }
-              // for (var dat in snapshot.data['repoName']) {
-              //   name.add(dat);
-              // }
-              // for (var dat in snapshot.data['repoDate']) {
-              //   date.add(dat);
-              // }
             } catch (NoSuchMethodError) {
+              print("DANGER AG");
+              print(snapshot.data['UploadedReport']);
               Center(
                 child: Column(
                   children: <Widget>[
@@ -224,9 +222,13 @@ class _AddReportState extends State<AddReport> {
                 ),
               );
             }
-            return (images == [] && name == [])
+
+            return images == []
                 ? Center(
-                    child: Text('No Reports Available'),
+                    child: Text('No Reports Available' ,style: TextStyle(
+                      fontSize: 20.0,
+                      color: Colors.black,
+                    ),),
                   )
                 : Builder(
                     builder: (context) => Stack(

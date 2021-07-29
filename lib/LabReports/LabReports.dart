@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/LabReports/ShowReport.dart';
 
 class LabReports extends StatefulWidget {
+  String docID;
+  LabReports({this.docID});
   @override
   _LabReportsState createState() => _LabReportsState();
 }
@@ -38,45 +40,51 @@ class _LabReportsState extends State<LabReports> {
       body: StreamBuilder(
           stream: FirebaseFirestore.instance
               .collection('User')
-              .doc('jinishagehlot193')
+              .doc(widget.docID)
               .snapshots(),
           builder: (context, snapshot) {
             List<String> name = [];
             List<String> date = [];
             List<String> reports = [];
-            try {
-              for (var dat in snapshot.data['LabReports']) {
-                reports.add(dat['Report']);
-                name.add(dat['Name']);
-                date.add(dat['Date']);
-              }
-            } catch (NoSuchMethodError) {
-              Center(
-                child: Column(
-                  children: <Widget>[
-                    Container(
-                      child: Text(
-                        'Fetching your reports...',
-                        style: TextStyle(fontSize: 20),
+              try {
+                for (var dat in snapshot.data['LabReports']) {
+                  reports.add(dat['Report']);
+                  name.add(dat['Name']);
+                  date.add(dat['Date']);
+                }
+              } catch (NoSuchMethodError) {
+                print("DANGER");
+                Center(
+                  child: Column(
+                    children: <Widget>[
+                      Container(
+                        child: Text(
+                          'Fetching your reports...',
+                          style: TextStyle(fontSize: 20),
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-              );
-            }
-            return (date == [] && name == [])
-                ? Center(
-                    child: Text('No Reports Available'),
-                  )
-                : Builder(
-                    builder: (context) => Stack(
+                    ],
+                  ),
+                );
+              }
+
+              return (date == null || name == null)
+                  ? Center(
+                child: Text('No Reports Available'),
+              )
+                  : Builder(
+                builder: (context) =>
+                    Stack(
                       children: [
                         Container(
                           child: Column(
                             children: <Widget>[
                               Container(
                                 height:
-                                    MediaQuery.of(context).size.height / 1.25,
+                                MediaQuery
+                                    .of(context)
+                                    .size
+                                    .height / 1.25,
                                 child: ListView.builder(
                                   scrollDirection: Axis.vertical,
                                   physics: BouncingScrollPhysics(),
@@ -90,7 +98,7 @@ class _LabReportsState extends State<LabReports> {
                                           leading: CircleAvatar(
                                             radius: 30.0,
                                             backgroundColor:
-                                                Colors.blueGrey[300],
+                                            Colors.blueGrey[300],
                                             child: Icon(
                                               Icons.receipt_long_sharp,
                                               color: Colors.black,
@@ -110,12 +118,13 @@ class _LabReportsState extends State<LabReports> {
                                             Navigator.push(context,
                                                 MaterialPageRoute(builder:
                                                     (BuildContext context) {
-                                              return ShowReport(
-                                                report: reports[index],
-                                                title: name[index],
-                                                date: date[index],
-                                              );
-                                            }));
+                                                  return ShowReport(
+                                                    report: reports[index],
+                                                    title: name[index],
+                                                    date: date[index],
+                                                    docID: widget.docID,
+                                                  );
+                                                }));
                                           },
                                         ),
                                         Divider(),
@@ -137,8 +146,10 @@ class _LabReportsState extends State<LabReports> {
                         ),
                       ],
                     ),
-                  );
-          }),
+              );
+            }
+          ),
     );
+
   }
 }

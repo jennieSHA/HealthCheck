@@ -112,7 +112,7 @@ class _UploadReportState extends State<UploadReport> {
                   };
                   FirebaseFirestore.instance
                       .collection('User')
-                      .doc('jinishagehlot193')
+                      .doc(username)
                       .update({
                     'LabReports': FieldValue.arrayUnion([values])
                   });

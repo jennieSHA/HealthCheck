@@ -2,8 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class ShowReport extends StatelessWidget {
-  ShowReport({this.report, this.title, this.date});
-
+  ShowReport({this.report, this.title, this.date,this.docID});
+  String docID;
   String title;
   String report, date;
 
@@ -37,15 +37,15 @@ class ShowReport extends StatelessWidget {
       body: StreamBuilder(
           stream: FirebaseFirestore.instance
               .collection('User')
-              .doc('jinishagehlot193')
+              .doc(docID)
               .snapshots(),
           builder: (context, snapshot) {
             String patientId;
             String age;
             String gender;
             try {
-              patientId = snapshot.data['PatientId'];
-              age = snapshot.data['Age'].toString();
+              patientId = snapshot.data['Name'];
+              age = snapshot.data['DateofBirth'].toString();
               gender = snapshot.data['Gender'];
             } catch (NoSuchMethodError) {
               Center(
