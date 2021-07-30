@@ -234,13 +234,13 @@ class _ChatState extends State<Chat> {
                     Container(
                       margin: EdgeInsets.symmetric(horizontal: 4.0),
                       child: IconButton(
-                        icon: Icon(Icons.send),
+                        icon: Icon(Icons.send, color: Colors.blueGrey),
                         onPressed: () => handleSubmitted(_textController.text),
                       ),
                     ),
                     IconButton(
                       iconSize: 30.0,
-                      icon: Icon(_isRecording ? Icons.mic: Icons.mic_off ),
+                      icon: Icon(_isRecording ? Icons.mic: Icons.mic_off,  color: Colors.blueGrey ),
                       onPressed: _isRecording ? stopStream : handleStream,
                     ),
                   ],
