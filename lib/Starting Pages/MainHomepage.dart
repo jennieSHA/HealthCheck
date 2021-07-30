@@ -10,6 +10,9 @@ import 'package:flutter_app/LabReports/PathologyInfo.dart';
 import 'package:flutter_app/SelfAssesment/BodyParts.dart';
 import 'package:flutter_app/Starting Pages/profilepage.dart';
 import 'package:flutter_app/UploadReport/AddReports.dart';
+import 'package:flutter_app/DoctorBot/chat.dart';
+import 'package:flutter_app/DoctorBot/Home.dart';
+
 
 // class MyApp extends StatelessWidget {
 //   @override
@@ -42,6 +45,54 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         title: Text('HealthMate'),backgroundColor: Colors.blueGrey,
       ),
+      
+      
+        //FOOTER
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (BuildContext context) {
+                return Chat();
+              }));
+        },
+        backgroundColor: Colors.black26,
+        elevation: 2.0,
+        child: Material(
+          color: Colors.black26,
+          shape: OutlineInputBorder(
+            //borderRadius: BorderRadius.circular(100.00),
+            borderSide: BorderSide(
+              color: Colors.white,
+              width: 1.0,
+            ),
+          ),
+          child: Container(
+            height: 90.0,
+            width: 90.0,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  'Doctor',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 12.0,
+                    fontWeight: FontWeight.w900,
+                  ),
+                ),
+                Text(
+                  'Bot',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 11.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
             bottomNavigationBar: BottomNavigationBar(
 
               backgroundColor: Colors.black12,
@@ -71,6 +122,8 @@ class _HomeState extends State<Home> {
                 ),
                 ],
             ),
+       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+
             body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
