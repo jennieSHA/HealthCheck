@@ -46,7 +46,10 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             Padding(padding: EdgeInsets.all(1.0)),
-            Image.network('https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Nnx8fGVufDB8fHw%3D&auto=format&fit=crop&w=500&q=60'),
+            Image.asset("assets/doctor.jpg",
+              height: 250,
+              width: 500,
+            ),
             SizedBox(
               height: 1,
             ),
