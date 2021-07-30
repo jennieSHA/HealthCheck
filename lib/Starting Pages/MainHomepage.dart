@@ -102,10 +102,10 @@ class _HomeState extends State<Home> {
                     icon: Icon(Icons.home, color: Colors.grey),
                     label: 'Home',
                     backgroundColor: Colors.black87),
-                BottomNavigationBarItem(
-                    icon: Icon(Icons.assignment, color: Colors.grey),
-                    label: 'My Lab Reports',
-                    backgroundColor: Colors.black87),
+                //BottomNavigationBarItem(
+                  //  icon: Icon(Icons.assignment, color: Colors.grey),
+                    //label: 'My Lab Reports',
+                    //backgroundColor: Colors.black87),
                 // BottomNavigationBarItem(
                 //     icon: Icon(Icons.person, color: Colors.grey),
                 //     label:
