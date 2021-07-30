@@ -94,32 +94,21 @@ class _HomeState extends State<Home> {
         ),
       ),
             bottomNavigationBar: BottomNavigationBar(
-
-              backgroundColor: Colors.black12,
-              type: BottomNavigationBarType.fixed,
-              items: [
-                BottomNavigationBarItem(
-                    icon: Icon(Icons.home, color: Colors.grey),
-                    label: 'Home',
-                    backgroundColor: Colors.black87),
-                //BottomNavigationBarItem(
-                  //  icon: Icon(Icons.assignment, color: Colors.grey),
-                    //label: 'My Lab Reports',
-                    //backgroundColor: Colors.black87),
-                // BottomNavigationBarItem(
-                //     icon: Icon(Icons.person, color: Colors.grey),
-                //     label:
-                //     'Report History',
-                //     backgroundColor: Colors.black87
-                // ),
-
-                BottomNavigationBarItem(
-
-                    icon: Icon(Icons.assignment, color: Colors.grey),
-                    label: 'My profile',
-                    backgroundColor: Colors.black87,
-
-                ),
+        backgroundColor: Colors.black26,
+        type: BottomNavigationBarType.fixed,
+        items: [
+          BottomNavigationBarItem(
+              icon: Icon(Icons.home, color: Colors.white),
+              title: Text(
+                'Home',
+                style: TextStyle(color: Colors.white,fontSize: 15),
+              )),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.account_circle, color: Colors.white),
+              title: Text(
+                'Profile',
+                style: TextStyle(color: Colors.white,fontSize: 15),
+              ))
                 ],
             ),
        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -303,7 +292,7 @@ class _HomeState extends State<Home> {
                         ),
                         Text(
                           "My Lab Reports",
-                          style: TextStyle(color: Colors.white, fontSize: 20),
+                          style: TextStyle(color: Colors.white, fontSize: 18),
                         ),
                       ],
                     )),
@@ -341,7 +330,7 @@ class _HomeState extends State<Home> {
                         ),
                         Text(
                           "Add Report",
-                          style: TextStyle(color: Colors.white, fontSize: 20),
+                          style: TextStyle(color: Colors.white, fontSize: 18),
                         ),
                       ],
                     )),
@@ -378,7 +367,7 @@ class _HomeState extends State<Home> {
                       ),
                       Text(
                         "Doctor Appointments",
-                        style: TextStyle(color: Colors.white, fontSize: 17),
+                        style: TextStyle(color: Colors.white, fontSize: 16.4),
                       ),
                     ],
                   )),
@@ -414,7 +403,7 @@ class _HomeState extends State<Home> {
                         ),
                         Text(
                           "Pathalogy",
-                          style: TextStyle(color: Colors.white, fontSize: 20),
+                          style: TextStyle(color: Colors.white, fontSize: 18),
                         ),
                       ],
                     )),
