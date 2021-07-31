@@ -138,7 +138,7 @@ class _SpecialistListState extends State<SpecialistList> {
         context,
         MaterialPageRoute(
           builder: (context) => CallPage(
-            channelName: 'Jinisha',
+            channelName: 'healthcare',
             role: ClientRole.Broadcaster,
           ),
         ),
