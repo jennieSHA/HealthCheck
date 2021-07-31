@@ -45,6 +45,7 @@ class _HomeState extends State<Home> {
       backgroundColor: Colors.blueGrey,
       appBar: AppBar(
         title: Text('HealthMate'),backgroundColor: Colors.black26,
+        automaticallyImplyLeading: false,
       ),
       
       
@@ -124,7 +125,7 @@ class _HomeState extends State<Home> {
                         Padding(padding: EdgeInsets.only(right: 130),),
                         MaterialButton(onPressed: (){FirebaseFirestore.instance.collection('User').doc(
                             widget.docID).delete();
-                        Navigator.push(context, MaterialPageRoute(builder: (context){return RegistrationScreen();}));},
+                        Navigator.push(context, MaterialPageRoute(builder: (context){return LoginScreen();}));},
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
